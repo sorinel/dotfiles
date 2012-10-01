@@ -1,0 +1,3 @@
+#!/bin/bash
+EDITOR="vim"
+/usr/local/bin/mc -d #$*

@@ -1,0 +1,2 @@
+defaults write com.apple.dock itunes-notifications -bool TRUE
+killall Dock

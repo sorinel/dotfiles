@@ -1,0 +1,92 @@
+# common
+alias vim="mvim"
+alias c="clear"
+alias l="ls -AGlFT"
+alias lt="ls -AGlFTtr"
+alias g?="grep -e $1"
+# alias gem="sudo gem"
+# alias macgem="sudo macgem"
+# alias git=hub
+#alias cd="cd && git status"
+
+# bash
+alias reload="source ~/.profile"
+alias rc='vim ~/.profile && source ~/.profile'
+alias lc="cl"
+function cl() { cd "$@" && l; }
+function cs () {
+  cd "$@"
+  if [ -n "$(git status 2>/dev/null)" ]; then
+    echo "$(git status 2>/dev/null)"
+  fi
+}
+function mkd() {
+  mkdir -p "$*" && cd "$*"
+}
+
+# make top default to ordering by CPU usage:
+alias top='top -ocpu'
+# more lightweight version of top which doesn't use so much CPU itself:
+alias ttop='top -ocpu -R -F -s 2 -n30'
+
+# TODO
+#fs [alias for "find . -wholename '*.svn' -prune -o -type f -print0 | xargs -0 grep -li"]
+
+# git
+# alias has="hack && rake && ship"
+alias has="hack && ship"
+
+alias gss="git stash save"
+alias gsp="git stash pop"
+
+alias gl="git log"
+alias ga="git add"
+alias gap="git add --patch"
+# alias gs="git status"
+alias gst="git status"
+
+alias gri="git rebase --interactive"
+alias grc="git rebase --continue"
+alias grs="git reset --soft HEAD^"
+alias grsc="git commit -C HEAD@{1}" # -c to edit message
+
+alias gd="git diff"
+alias gdc="git diff --cached"
+
+alias g-update-deleted="git ls-files -z --deleted | git update-index -z --remove --stdin"
+#alias gstt="git ls-files --exclude-per-directory=.gitignore --exclude-from=.git/info/exclude --others --modified -t"
+
+alias gb="git branch"
+alias gba="git branch -a -v --color"
+
+# TODO check
+alias gfr="git pull --rebase"
+alias gpr="git pull --rebase"
+# alias gfr="git fetch && git rebase refs/remotes/origin/master"
+alias gci="git commit"
+alias gco="git checkout"
+function gco {
+  if [ -z "$1" ]; then
+    git checkout master
+  else
+    git checkout $1
+  fi
+}
+
+# rails
+alias r=rails
+alias rake?="rake -T | g? $1"
+alias ms="mongrel_rails start"
+alias mig="rake db:migrate"
+alias migt="rake db:migrate RAILS_ENV=test"
+
+# stuff
+#alias df="df -h"
+#alias du="du -hs"
+alias scpr="rsync --partial --progress --rsh=ssh"
+
+#typeos
+alias vm=mv
+
+#kindle
+alias kindle="cp -v $1 ~/carti/_kindle/"

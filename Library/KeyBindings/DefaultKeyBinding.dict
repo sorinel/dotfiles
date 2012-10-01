@@ -1,0 +1,10 @@
+/* my keybindings */
+
+{
+/* schimbam § cu ` */
+"§" = ("insertText:", "\U0060"); /* tick symbol */
+/* schimbam ± cu ~ */
+"±" = ("insertText:", "\U007E"); /* tilda symbol */
+
+}
+
