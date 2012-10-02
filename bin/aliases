@@ -89,4 +89,4 @@ alias scpr="rsync --partial --progress --rsh=ssh"
 alias vm=mv
 
 #kindle
-alias kindle="cp -v $1 ~/carti/_kindle/"
+#alias kindle="cp -v $1 ~/carti/_kindle/"
